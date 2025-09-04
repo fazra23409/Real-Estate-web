@@ -1,0 +1,652 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-padding: 4rem;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+  }
+
+  body {
+    background-color:white;
+    color: white;
+    
+  }
+ .hidden{
+  opacity: 0;
+  transform: translateY(50px); 
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+ }
+ .visible{
+  opacity: 1;
+  transform: translateY(0);
+ }
+ section{
+    padding: 50px 100px;
+ }
+ :root{
+    --main-color:#800000;
+    --second-color:#005500;
+    --text-color: black;
+    --bg-color: white;
+
+    --box-shadow: 2px 2px 10px 4px rgba(0, 0, 0, 0.3);
+ }
+
+ 
+ img{
+    width: 100%;
+ }
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 100px;
+    transform: 0.5s linear;
+    background: #8E1616;
+}
+.logo img{
+    width: 80px;
+}
+.navbar{
+    display:flex;
+}
+.navbar a{
+    padding: 8px 17px;
+    color: var(--bg-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.navbar a:hover{
+    background: var(--text-color);
+    border-radius: 0.2rem;
+    transition: 0.2s all linear;
+}
+.navbar {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar li {
+    position: relative;
+  }
+  
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1000; 
+     /*z index itu angka yang ngatur posisi elemen ada di atas atau dibawah elemen lain
+     yg saling tumpang tindih di web page. semakin besar angkanya elemennya bakal muncul di depan elemen lain yang angka nya lebih kecil  */
+  }
+  
+  .navbar li:hover .dropdown {
+    display: block;
+  }
+  
+  .dropdown li {
+    padding: 10px;
+    white-space: nowrap;
+  }
+  
+  .dropdown li a {
+    text-decoration: none;
+    color: black;
+  } 
+  .dropdown li a:hover {
+    color: white;
+  }
+  
+.header-icon{
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    column-gap: 0.8rem;
+}
+.header-icon i{
+    color: var(--bg-color);
+}
+.header-icon i:hover{
+    color: var(--text-color);
+    transition: 0.2s all linear;
+}
+#menu-icon{
+    color: var(--bg-color);
+    font-size: 24px;
+    z-index: 1000;
+    cursor: pointer;
+    display: none;
+}
+
+.home{
+  display: flex;
+  justify-content: center;
+  margin-top: 120px;
+  width: 100%;
+  margin-left: 10px;
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ), url(header2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 1.5rem;
+  border-radius: 30px;
+  text-align: center;
+}
+.home-content h1{
+   font-size: 3.4rem;
+   color: white;
+   letter-spacing: 1px;
+   text-align: left;
+   padding: 50px;
+}
+.home-content p,h3{
+    font-size: 1;
+    color: white;
+    margin: 0.5rem 1.4rem;
+    text-align: left;
+    padding-left: 30px;
+}
+.about{
+    padding: 100px 20px 10px;
+  }
+  .about-box{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); 
+      /* maksudnya ada 2 kolom, masing" kolom lebarnya 1 fr */
+      /* fr itu fraction, bagian. */
+      gap: 40px;
+  }
+  .about-box img{
+    width: 100%;
+    height: 80%;
+    border-radius: 20px;
+    margin-left: 10px;
+  }
+  .about-box h1{
+    font-size: 40px;
+    color: black;
+    margin-bottom: 10px;
+  }
+  .about-box p{
+    line-height: 2; 
+    /* jarak buat antar garis teks */
+    text-align: justify;
+    color: black;
+    margin-right: 30px;
+  }
+
+  .section-detail {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px;
+  }
+  
+  .section-detail-box {
+    padding: 10px 45px;
+    border: 2px solid black;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* ease itu cara animasi gerak. pelan-cepat pelan */
+  }
+  
+  .section-detail-box p {
+    margin: 0;
+    font-weight: 500;
+    color: black;
+  }
+  a{
+    list-style: none;
+    text-decoration: none;
+  }
+  .section-detail-box:hover p, .section-detail-box:hover {
+    background-color: black;
+    color: white;
+  }
+  
+  .section-detail-box.active {
+    color: white;
+  }
+  
+  .expertise-container2 {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin: 80px auto 40px; 
+    padding: 0 20px;
+  }
+  
+  .property-card img {
+    width: 100%;  
+    max-width: 800px;
+    height: 400px;   
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .expertise-container2 img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  }
+  .expertise-container2 h3, p{
+    color: black;
+  }
+  .property-info {
+    padding: 20px;
+  }
+  
+  .property-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .property-header h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+    color: #222;
+  }
+  
+  .property-header .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e53935;
+  }
+  
+  .property-info p {
+    margin: 0;
+    text-align: justify;
+    color: #077A7D;
+  }
+  
+/* PROFILE TEAM */
+#about .team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+
+  }
+  
+  .team-member {
+    text-align: center;
+    max-width: 200px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: scale(1.05);
+  }
+  
+  .team-member img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .team-member h3 {
+    font-size: 1.1em;
+    margin: 8px 0 4px;
+    color: #333;
+  }
+  
+  .team-member p {
+    font-size: 0.95em;
+    color: #666;
+  }
+  
+#properties {
+    padding: 50px 20px;
+}
+
+#properties h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+}
+
+.properties-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* minimal lebar kolom 300px */
+    gap: 20px;
+}
+
+.property-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    /* overflow itu buat nutupin kelebihan isi biar ga keluar kotak */
+    background-color: #fff;
+    transition: box-shadow 0.3s ease;
+}
+
+.property-card:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.property-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.property-card h3 {
+    font-size: 1.5em;
+    margin: 15px;
+}
+
+.property-card p {
+    font-size: 1.2em;
+    margin: 0 15px 15px;
+    color: #8E1616;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    font-size: 0.9em;
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: auto;
+  color: white;
+  padding: 0 20px;
+}
+
+.footer-column {
+  width: 30%;
+  color: white;
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  text-align: left;
+  color: white;
+}
+
+.footer-column p, .footer-column ul {
+  font-size: 17px;
+  line-height: 1.6;
+  text-align: left;
+  color: wheat;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  color: white;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+  text-align: left;
+  color: white;
+}
+
+.footer-column p {
+  color: white;
+}
+
+.subscribe-form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+.subscribe-form button {
+  background-color: #8E1616;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.subscribe-form button:hover {
+  background-color: #8E1616;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 10px;
+  border-top: 1px solid white;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons i {
+  font-size: 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+  .footer-column {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+
+  .subscribe-form {
+      justify-content: center;
+  }
+.overlay a{
+color: white;
+text-decoration: none;
+}
+.contact{
+    padding: 8rem 7% 1.4rem;
+}
+.contact h2{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+.contact p{
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-weight: 100;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+.contact .row{
+    display: flex;
+    margin-top: 2rem;
+    background-color: #222;
+}
+.contact .row .map{
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+.contact .row form{
+    flex: 1 1 45rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.contact .row form .input-group{
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color:#8E1616 ;
+    border: 1px solid var(--text-color);
+    padding-left: 2rem ;
+}
+.contact .row form .input-group input{
+    width: 100%;
+    padding: 2rem;
+    font-size: 1.7rem;
+    background: none;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    background-color: #8E1616;
+    border: 1px solid var(--text-color);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    max-width: 100%;
+  }
+  
+  .input-group i {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-right: 10px;
+  }
+  
+  .input-group input {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--text-color);
+  }
+  .contact .row button{
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    background-color: #8E1616;
+    color: var(--bg-color);
+    border: none;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+  }
+  .row button{
+    background-color: #8E1616;
+    color: var(--bg-color);
+    border: none;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
+  }
+  /* search */
+
+.hero-form-wrapper {
+  background-color: #f9f9f9;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 1000px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.form-tab {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form-tab-item {
+  flex: 1;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #333;
+  transition: 0.3s;
+}
+
+.form-tab-item.active,
+.form-tab-item:hover {
+  background-color: #8E1616;
+  color: white;
+}
+
+.input-wrapper {
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.dropdown-list {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+}
+
+.btn-primary {
+  padding: 12px 24px;
+  background-color: #8E1616;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.btn-primary:hover {
+  background-color: #8E1616;
+}
